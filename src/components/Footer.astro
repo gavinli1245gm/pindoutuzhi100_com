@@ -1,0 +1,43 @@
+---
+import { siteConfig } from '@/config';
+
+const { footer } = siteConfig;
+const footerLinks = footer.columns.flatMap((col) => col.links || []);
+---
+
+<footer class="cute-gradient border-t border-pink-200/50 dark:border-purple-300/30 mt-20">
+  <div class="max-w-6xl mx-auto px-4 py-6">
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-gray-700 dark:text-gray-200">
+      <div class="flex flex-wrap items-center gap-x-3 gap-y-2">
+        {footerLinks.map((link, index) => (
+          <>
+            {index > 0 && <span class="text-pink-300 dark:text-purple-400">✿</span>}
+            <a
+              href={link.url}
+              class="hover:text-primary-dark transition-colors px-3 py-1 rounded-full hover:bg-white/50 dark:hover:bg-white/20"
+            >
+              {link.label}
+            </a>
+          </>
+        ))}
+      </div>
+
+      <div class="flex flex-wrap items-center gap-2 md:justify-end">
+        <span class="px-3 py-1 rounded-full bg-white/50 dark:bg-white/20">{footer.copyright}</span>
+        {footer.icp && (
+          <>
+            <span class="text-pink-300 dark:text-purple-400">✿</span>
+            <a
+              href="https://beian.miit.gov.cn/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:text-primary-dark transition-colors px-3 py-1 rounded-full hover:bg-white/50 dark:hover:bg-white/20"
+            >
+              {footer.icp}
+            </a>
+          </>
+        )}
+      </div>
+    </div>
+  </div>
+</footer>

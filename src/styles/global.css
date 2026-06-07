@@ -1,0 +1,85 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #ff9eb5;
+  --color-primary-dark: #ff7a9e;
+  --color-primary-light: #ffe4ec;
+  --color-secondary: #b8a9c9;
+  --color-accent: #98d8c8;
+  --color-cute-pink: #ffb7c5;
+  --color-cute-purple: #d4b5e0;
+  --color-cute-mint: #a8e6cf;
+  --color-cute-yellow: #ffd3a5;
+  --color-cute-blue: #a8d8ea;
+  --font-sans: 'M PLUS Rounded 1c', 'Nunito', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-display: 'M PLUS Rounded 1c', 'Nunito', 'PingFang SC', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* 暗夜模式过渡动画 */
+body, header, footer, main {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+/* 可爱风格全局样式 */
+body {
+  font-family: var(--font-sans);
+}
+
+/* 圆润按钮样式 */
+.cute-btn {
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 158, 181, 0.3);
+}
+
+.cute-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 158, 181, 0.4);
+}
+
+/* 卡片样式 */
+.cute-card {
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(255, 158, 181, 0.15);
+  transition: all 0.3s ease;
+}
+
+.cute-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(255, 158, 181, 0.25);
+}
+
+/* 渐变背景 */
+.cute-gradient {
+  background: linear-gradient(135deg, #ffe4ec 0%, #e8d4f0 50%, #d4e8f0 100%);
+}
+
+.dark .cute-gradient {
+  background: linear-gradient(135deg, #2d1f2d 0%, #1f1d2d 50%, #1d2d2d 100%);
+}
+
+.cute-gradient-pink {
+  background: linear-gradient(135deg, #ffb7c5 0%, #ff9eb5 100%);
+}
+
+.dark .cute-gradient-pink {
+  background: linear-gradient(135deg, #8b4a6a 0%, #7a3d5a 100%);
+}
+
+/* 装饰性圆点 */
+.cute-dots {
+  background-image: radial-gradient(circle, #ffb7c5 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.dark .cute-dots {
+  background-image: radial-gradient(circle, #d4b5e0 1px, transparent 1px);
+  background-size: 20px 20px;
+}
